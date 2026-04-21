@@ -18,18 +18,31 @@ const app = express();
 app.use(helmet());
 app.use(morgan(process.env.NODE_ENV === "production" ? "combined" : "dev"));
 
-// ─── CORS ────────────────────────────────────────────────────────────────────
+// ─── CORS (FIXED FOR PRODUCTION) ─────────────────────────────────────────────
+const allowedOrigins = [
+  process.env.CLIENT_URL,
+  "http://localhost:5173",
+  "http://localhost:3000",
+  "https://skill-matcher-app.vercel.app",
+];
+
 app.use(
   cors({
-    origin: [
-      process.env.CLIENT_URL || "http://localhost:5173",
-      "http://localhost:3000",
-      "http://localhost:5173",
-    ],
+    origin: function (origin, callback) {
+      // allow tools like Postman / curl
+      if (!origin) return callback(null, true);
+
+      if (allowedOrigins.includes(origin)) {
+        return callback(null, true);
+      } else {
+        console.log("❌ CORS blocked:", origin);
+        return callback(new Error("Not allowed by CORS"));
+      }
+    },
     credentials: true,
     methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
     allowedHeaders: ["Content-Type", "Authorization"],
-  }),
+  })
 );
 
 // ─── Body Parsing ─────────────────────────────────────────────────────────────
