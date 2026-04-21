@@ -97,7 +97,7 @@ const Dashboard = () => {
             <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
               <div>
                 <h1 className="text-4xl font-bold text-slate-900 mb-2">
-                  Welcome back, {user?.name?.split(" ")[0] || "there"}! 👋
+                  Welcome back, {user?.name?.split(" ")[0] || "there"}!
                 </h1>
                 <p className="text-slate-600 text-lg">
                   Track your income paths, complete milestones, and grow your
@@ -172,7 +172,10 @@ const Dashboard = () => {
               <div className="card-elevated mb-12">
                 <div className="flex items-center justify-between mb-6">
                   <div>
-                    <h3 className="text-card-title">Overall Progress 📈</h3>
+                    <h3 className="text-card-title flex items-center gap-2">
+                      <FiBarChart2 size={20} />
+                      Overall Progress
+                    </h3>
                     <p className="text-body-sm mt-1">
                       Track your advancement across all active paths
                     </p>

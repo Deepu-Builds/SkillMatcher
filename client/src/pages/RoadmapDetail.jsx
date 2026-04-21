@@ -366,8 +366,9 @@ const RoadmapDetail = () => {
 
                 {progress === 100 && (
                   <div className="mt-8 px-6 py-5 bg-gradient-to-r from-green-50 to-emerald-50 border-2 border-green-200 rounded-xl text-center animate-fade-in-up">
-                    <p className="text-lg font-bold text-green-700 mb-2">
-                      🎉 Congratulations!
+                    <p className="text-lg font-bold text-green-700 mb-2 flex items-center justify-center gap-2">
+                      <FiCheck className="w-6 h-6" />
+                      Congratulations!
                     </p>
                     <p className="text-green-600 text-sm mb-4">
                       You've completed all steps for this path. Ready to explore

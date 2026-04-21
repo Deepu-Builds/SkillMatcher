@@ -234,8 +234,9 @@ const Features = () => (
   <section id="features" className="py-24 bg-slate-50">
     <div className="section-container">
       <div className="text-center max-w-3xl mx-auto mb-16">
-        <span className="text-sm font-semibold text-orange-600 uppercase tracking-widest">
-          🎯 Everything You Need
+        <span className="inline-flex items-center justify-center gap-2 text-sm font-semibold text-orange-600 uppercase tracking-widest">
+          <FiTarget size={16} />
+          Everything You Need
         </span>
         <h2 className="text-section-title mt-4 mb-4">
           Built for serious income seekers

@@ -204,8 +204,9 @@ const Explore = () => {
         <div className="section-container">
           {/* Premium Hero Header */}
           <div className="mb-16 text-center">
-            <span className="inline-block text-sm font-semibold text-orange-600 uppercase tracking-widest mb-3">
-              🚀 Discover Income Paths
+            <span className="inline-flex items-center justify-center gap-2 text-sm font-semibold text-orange-600 uppercase tracking-widest mb-3">
+              <FiZap size={16} />
+              Discover Income Paths
             </span>
             <h1 className="text-hero mb-4">
               Explore {paths.length} Curated Paths
